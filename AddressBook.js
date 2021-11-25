@@ -20,6 +20,7 @@ constructor(...param) {
     this.email = param[7];
 
 }
+   // geter and setter method
 get first_Name() {
     return this.first_Name;
 }
@@ -63,6 +64,7 @@ set phone_Number (phone_Number) {
 set email(email) {
     this.email = email;
 }
+    // call the string method
 tostring() {
     return "First Name :" + this.first_Name + ", \n Name :" + this.last_Name + ",\nCity : " + this.city + ",\nState : " + this.state + ", \n Zip : " + this.zip + ", \n Phone Number : " + this.phone_Number + ", \nEmail : " + this.email;
 }
