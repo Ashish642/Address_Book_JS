@@ -170,6 +170,40 @@ try {
     addressBookList.push(new_contact1);
     addressBookList.push(new_contact2);
 
+    const prompt = require('promt-sync')();
+    function findContact(first_Name, last_Name) {
+        let contactToEdit;                                // calling edit function
+        for(let i =0; i < addressBookList.length; i++){
+            if (addressBookList[i]._first_Name=== first_Name && addressBookList[i]._last_Name=== last_Name)
+            contactToEdit = addressBookList[i]
+        }
+        if(contactToEdit== null)
+        console.log("No Contact Found To Edit")
+        else{
+            let input =1;
+            while(input !=9) {
+                console.log("1. Edit First Name\n2. Edit Last Name \n");
+                input = prompt("Enter Your Choice: ")
+                input = parseInt(input)
+                switch (input) {
+                    case 1:
+                        let first_Name = prompt("Enter the first Name: ")
+                        contactToEdit._first_Name = first_Name
+                        break;
+                    case 2:let last_Name = prompt("Enter the last name: ")
+                         contactToEdit._last_Name = last_Name
+                         break;
+                    default:
+                        console.log("Wrong Input")
+
+                }
+            }
+        }
+    }
+    let param1 = prompt("Enter the First Name: ")
+    let param2 = prompt("Enter the Last Name: ")
+    findContact(param1,param2)
+
     console.log(addressBookList[0].toString());
     console.log(addressBookList[1].toString());
 } catch (e) {
