@@ -1,10 +1,10 @@
-const name_Regex = "^([A-z]{1}[a-z]{2,1}$";
-const address_Regex = "([a-zA-Z0-9 ,]{4,})$";
+const name_Regex = "^([A-Z]{1}[a-z]{2,})$";
+const address_Regex = "^([a-zA-Z0-9 ,]{4,})$";
 const city_Regex = "^([a-zA-Z0-9 ,]{4,})$";
-const state_Regex = "^([a-zA-Z0-9 ,]{4,})$"
+const state_Regex = "^([a-zA-Z0-9 ,]{4,})$";
 const zip_Regex = "^([0-9]{3}\\s{0,1}[0-9]{3})$";
 const phone_Number_Regex = "^([0-9]{2}\\s{1}[0-9]{10})$";
-const email_Regex = "^([a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$";
+const email_Regex = "^([a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$)";
 
 class Contact {
     first_Name;
@@ -157,14 +157,21 @@ class Contact {
     }
 
     toString() {
-        return "First Name : " + this.first_Name + ",\nLast Name : " + this.last_Name + ",\nCity : " + this.city + ",\nState : " + this.state + ",\nZip : " + this.zip + ",\nPhone Number : " + this.phone_Number + ",\nEmail : " + this.email;
+        return "First Name : " + this.first_Name + ",\nLast Name : " + this.last_Name + ",\nAddress : " + this.address + ",\nCity : " + this.city + ",\nState : " + this.state + ",\nZip : " + this.zip + ",\nPhone Number : " + this.phone_Number + ",\nEmail : " + this.email;
     }
 }
 
 console.log("Welcome to address book program....");
 try {
-    let new_contact = new Contact("Ashish", "kumar", "Rajapur", "Prayagraj", "UP", "221404", "9453627297", "ashish05041@gmail.com");
-    console.log(new_contact.toString());
+    let new_contact1 = new Contact("Ashish", "Kumar", "Rajapur", "Prayagraj", "UP", "221404", "91 9453627297", "ashish05041@gmail.com");
+    let new_contact2 = new Contact("Sachin", "Kumar", "Rajapur", "Prayagraj", "UP", "221404", "91 7652-42754", "sachin9898@gmail.com");
+
+    var addressBookList = new Array();
+    addressBookList.push(new_contact1);
+    addressBookList.push(new_contact2);
+
+    console.log(addressBookList[0].toString());
+    console.log(addressBookList[1].toString());
 } catch (e) {
     console.log(e);
 }
