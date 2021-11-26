@@ -172,13 +172,13 @@ try {
 
     const prompt = require('promt-sync')();
     function findContact(first_Name, last_Name) {
-        let contactToEdit;                                // calling edit function
+        let contactToDelete;                                // calling Delete function
         for(let i =0; i < addressBookList.length; i++){
             if (addressBookList[i]._first_Name=== first_Name && addressBookList[i]._last_Name=== last_Name)
-            contactToEdit = addressBookList[i]
+            contactToDelete = addressBookList[i]
         }
-        if(contactToEdit== null)
-        console.log("No Contact Found To Edit")
+        if(contactToDelete== null)
+        console.log("No Contact Found To Delete")
         else{
             let input =1;
             while(input !=9) {
@@ -202,7 +202,7 @@ try {
     }
     let param1 = prompt("Enter the First Name: ")
     let param2 = prompt("Enter the Last Name: ")
-    findContact(param1,param2)
+    findContact(param1,param2)                                  // find to contact
 
     console.log(addressBookList[0].toString());
     console.log(addressBookList[1].toString());
