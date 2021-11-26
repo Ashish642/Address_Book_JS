@@ -182,16 +182,17 @@ try {
         else{
             let input =1;
             while(input !=9) {
-                console.log("1. Edit First Name\n2. Edit Last Name \n");
+                console.log("1. Edit First Name\n2. Edit Last Name \n3. Edit Address\n4. Edit City \n5. Edit State");
+                console.log("6. Edit ZipCode \n7. Edit Phone No \n8. Edit Email \n 9. Exit")
                 input = prompt("Enter Your Choice: ")
                 input = parseInt(input)
                 switch (input) {
                     case 1:
                         let first_Name = prompt("Enter the first Name: ")
-                        contactToEdit._first_Name = first_Name
+                        contactToDelete._first_Name = first_Name
                         break;
                     case 2:let last_Name = prompt("Enter the last name: ")
-                         contactToEdit._last_Name = last_Name
+                         contactToDelete._last_Name = last_Name
                          break;
                     default:
                         console.log("Wrong Input")
